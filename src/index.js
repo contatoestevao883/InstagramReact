@@ -167,9 +167,11 @@ const SideBar = () => {
                     <img src="/assets/img/bad.vibes.memes.svg"/>
                 </div>
                 <div class="follow">
+                    <div class="span-h3">
                         <span class="follow-user">bad.vibes.memes</span>
-                        <span class="second-span">Segue você</span>
-                    <h3>Seguir</h3>
+                        <h3>Seguir</h3>
+                     </div>
+                     <span class="second-span">Segue você</span>
                 </div>
             </div>
 
