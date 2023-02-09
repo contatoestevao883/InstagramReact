@@ -133,7 +133,7 @@ input::placeholder{
     justify-content: space-between;
 }
 .content{
-    height: 200px;
+    height: 190px;
 }
 
 .container{
@@ -144,6 +144,10 @@ input::placeholder{
 .container{
     width: 32px;
     height: 32px;
+}
+
+.dots{
+    margin-right: 10px;
 }
 
 .title{
@@ -228,7 +232,8 @@ input::placeholder{
     color: #8E8E8E;
     font-weight: normal;
     position: relative;
-    right: 50px;
+    right: 0px;
+    bottom: 10px;
 }
 .ver-tudo{
     position: absolute;
@@ -239,20 +244,6 @@ input::placeholder{
     display: flex;
     margin-left: 20px;
     width: 300px;
-}
-
-.users1{
-    display: flex;
-    margin-top: 10px;
-    width: 300px;
-    margin-left: 20px;
-}
-
-.users1 img{
-    width: 32px;
-    height: 32px;
-    margin: 2px 10px 10px 2px;
-
 }
 
 .users-content{
