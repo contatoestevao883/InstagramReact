@@ -165,6 +165,10 @@ input::placeholder{
     height: 20px;
 }
 
+.logos-img-div{
+display: flex;
+
+}
 .logos-imgs{
     margin: 5px 5px 5px 8px;
     width: 20px;
@@ -217,7 +221,7 @@ input::placeholder{
 .side-bar-profile{
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 110px;
     margin-bottom: 20px;
     margin-right: 110px;
     width: 180px;
@@ -243,7 +247,7 @@ input::placeholder{
 .ver-tudo{
     position: absolute;
     right: 450px;
-    top: 205px;
+    top: 195px;
 }
 .users{
     display: flex;
@@ -313,4 +317,22 @@ h3{
 
 .bookmark-div{
     margin: 5px 8px 5px 5px;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    color: #C7C7C7;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.texto-p{
+    margin-top: 10px;
+}
+
+.div-logo{
+    display: flex;
 }
