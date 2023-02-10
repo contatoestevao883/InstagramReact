@@ -166,11 +166,12 @@ input::placeholder{
 }
 
 .logos-img-div{
-display: flex;
+    display: flex;
+    margin: ;
 
 }
 .logos-imgs{
-    margin: 5px 5px 5px 8px;
+    margin: 0px 8px 0px 0px;
     width: 20px;
     height: 20px;
 }
@@ -335,4 +336,9 @@ h3{
 
 .div-logo{
     display: flex;
+}
+
+button{
+    border-style: none;
+    background-color: white;
 }

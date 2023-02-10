@@ -75,9 +75,9 @@ function Post(props){
                 <img onDoubleClick={doubleClick} src={props.post}/>
                 <div class="div-logo">
                     <div class="logos-img-div">
-                       {addHeart === false ? <div data-test="like-post" class="logos-imgs heart"><AiOutlineHeart  onClick={oneClick} data-test="like-post" class="logos-imgs heart"/></div> : <div data-test="like-post" class="logos-imgs heartfill" ><AiFillHeart onClick={oneClick} class="logos-imgs heartfill"/></div>}
-                       <div class="logos-imgs"><TbMessageCircle2 class="logos-imgs circle"/></div> 
-                       <div class="logos-imgs"><FiSend class="logos-imgs send"/></div>
+                       {addHeart === false ? <button data-test="like-post" class="logos-imgs heart"><AiOutlineHeart onClick={oneClick} class="logos-imgs heart"/></button> : <button data-test="like-post" class="logos-imgs heartfill" ><AiFillHeart onClick={oneClick} class="logos-imgs heartfill"/></button>}
+                       <button class="logos-imgs"><TbMessageCircle2 class="logos-imgs circle"/></button> 
+                       <button class="logos-imgs"><FiSend class="logos-imgs send"/></button>
                     </div>
                     <div className='bookmark-div'>
                         {savePost === false ? <BsBookmark onClick={oneClickBookmark} data-test="save-post" class="bookmark"/> : <BsFillBookmarkFill onClick={oneClickBookmark} data-test="save-post" onclass="bookmarkfill"/>}
