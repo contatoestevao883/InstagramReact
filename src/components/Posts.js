@@ -75,7 +75,7 @@ function Post(props){
                 <img onDoubleClick={doubleClick} src={props.post}/>
                 <div class="div-logo">
                     <div class="logos-img-div">
-                       {(addHeart === false) ? <AiOutlineHeart data-test="like-post" onClick={oneClick} class="logos-imgs heart"/> : <AiFillHeart data-test="like-post" onClick={oneClick} class="logos-imgs heartfill"/>}
+                       {(addHeart === false) ? <AiOutlineHeart  onClick={oneClick} data-test="like-post" class="logos-imgs heart"/> : <AiFillHeart onClick={oneClick} data-test="like-post" class="logos-imgs heartfill"/>}
                         <TbMessageCircle2 class="logos-imgs circle" />
                         <FiSend class="logos-imgs send"/>
                     </div>
@@ -85,7 +85,7 @@ function Post(props){
                 </div>
                 <div class="comentary">
                     <img src={props.comentary} />
-                    <span>Curtido por <strong>{props.user}</strong> e outras <strong data-test="likes-number">{likesCount} pessoas</strong></span>
+                    <span data-test="likes-number">Curtido por <strong>{props.user}</strong> e outras <strong>{likesCount} pessoas</strong></span>
                 </div>
             </div>
         </div>
