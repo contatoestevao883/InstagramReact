@@ -169,7 +169,7 @@ input::placeholder{
     display: flex;
 }
 .logos-imgs{
-    margin: 0px 8px 0px 0px;
+    margin: 3px 8px 0px 0px;
     width: 20px;
     height: 20px;
 }
@@ -339,4 +339,37 @@ h3{
 button{
     border-style: none;
     background-color: white;
+}
+.frame-motion-div{
+    display: flex;
+    position: relative;
+}
+
+@keyframes frame-motion{
+    from {
+        transform: scale(0.2);
+      }
+    
+      to {
+        transform: scale(1.0);
+      }
+}
+.frame-motion{
+    position: absolute;
+    right: 240px;
+    bottom: 220px;
+    color: white;
+    font-size: 150px;
+}
+
+.display-none{
+    display: none;
+}
+.display{
+    animation-duration: 0.3s;
+    animation-name: frame-motion;
+}
+
+.frame-motion-div img{
+    cursor:pointer;
 }

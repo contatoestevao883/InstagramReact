@@ -29,6 +29,7 @@ function Post(props){
     const [likesCount, setLikesCount] = useState(props.likes)
     const [addHeart, setAddHeart] = useState(false)
     const [savePost, setSavePost] = useState(false)
+    const [showHeart, setShowHeart] = useState(false)
     
     const sumLikes = () => {
         setLikesCount(likesCount  + 1)
@@ -41,12 +42,13 @@ function Post(props){
     }
 
     const doubleClick = () =>{
-        if(addHeart === false){
+        if(addHeart === false && showHeart === false){
             setAddHeart(!addHeart)
+            setShowHeart(!showHeart)
             sumLikes()
+            setTimeout(setShowHeart, 500, false)
         }
     }
-
     const oneClick = () => { 
         if(addHeart === false){
             setAddHeart(!addHeart)
@@ -71,7 +73,14 @@ function Post(props){
                     </div>
                     <BiDotsHorizontalRounded class="dots"/>
                 </div>
-                <img onDoubleClick={doubleClick} data-test="post-image" src={props.post}/>
+                <div class="frame-motion-div">
+                    <img onDoubleClick={doubleClick} data-test="post-image" src={props.post}/>
+                    <div class="frame-motion">
+                        {showHeart === false ?
+                        <AiFillHeart class="display-none"/> :
+                        <AiFillHeart class="display"/>}
+                    </div>
+                </div>
                 <div class="div-logo">
                     <div class="logos-img-div">
                        {addHeart === false ? 
@@ -106,7 +115,7 @@ function Post(props){
                 </div>
                 <div class="comentary">
                     <img src={props.comentary} />
-                    <span>Curtido por <strong>{props.user}</strong> e outras <strong><span data-test="likes-number">{likesCount + 1}</span> pessoas</strong></span>
+                    <span>Curtido por <strong>{props.user}</strong> e outras <strong><span data-test="likes-number">{likesCount}</span> pessoas</strong></span>
                 </div>
             </div>
         </div>
