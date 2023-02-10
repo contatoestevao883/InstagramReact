@@ -31,7 +31,7 @@ function Post(props){
     const [savePost, setSavePost] = useState(false)
     
     const sumLikes = () => {
-        setLikesCount(likesCount + 1)
+        setLikesCount(likesCount  + 1)
         console.log(likesCount)
     }
 
@@ -59,7 +59,6 @@ function Post(props){
 
     const oneClickBookmark = () => { 
             setSavePost(!savePost)
-
     }
 
     return (    
@@ -67,17 +66,39 @@ function Post(props){
             <div data-test="post" class="main">
                 <div class="box"  key={props.index}>
                     <div class="container">
-                        <img data-test="post-image" src={props.image}/>
+                        <img src={props.image}/>
                         <p class="title">{props.title}</p>
                     </div>
                     <BiDotsHorizontalRounded class="dots"/>
                 </div>
-                <img onDoubleClick={doubleClick} src={props.post}/>
+                <img onDoubleClick={doubleClick} data-test="post-image" src={props.post}/>
                 <div class="div-logo">
                     <div class="logos-img-div">
-                       {addHeart === false ? <button data-test="like-post" class="logos-imgs heart" onClick={oneClick}><AiOutlineHeart class="logos-imgs heart"/></button> : <button data-test="like-post" class="logos-imgs heartfill" onClick={oneClick} ><AiFillHeart class="logos-imgs heartfill"/></button>}
-                       <button class="logos-imgs"><TbMessageCircle2 class="logos-imgs circle"/></button> 
-                       <button class="logos-imgs"><FiSend class="logos-imgs send"/></button>
+                       {addHeart === false ? 
+                        <button 
+                            data-test="like-post" 
+                            class="logos-imgs heart" 
+                            onClick={oneClick}>
+                            <AiOutlineHeart class="logos-imgs heart"/>
+                        </button> :
+                        <button 
+                            data-test="like-post" 
+                            class="logos-imgs heartfill" 
+                            onClick={oneClick} >
+                            <AiFillHeart class="logos-imgs heartfill"/>
+                        </button>}
+
+                       <button 
+                            class="logos-imgs">
+                            <TbMessageCircle2 
+                            class="logos-imgs circle"/>
+                       </button> 
+
+                       <button 
+                            class="logos-imgs">
+                            <FiSend 
+                            class="logos-imgs send"/>
+                        </button>
                     </div>
                     <div className='bookmark-div'>
                         {savePost === false ? <BsBookmark onClick={oneClickBookmark} data-test="save-post" class="bookmark"/> : <BsFillBookmarkFill onClick={oneClickBookmark} data-test="save-post" onclass="bookmarkfill"/>}
@@ -85,7 +106,7 @@ function Post(props){
                 </div>
                 <div class="comentary">
                     <img src={props.comentary} />
-                    <span>Curtido por <strong>{props.user}</strong> e outras <strong><span data-test="likes-number">{likesCount}</span> pessoas</strong></span>
+                    <span>Curtido por <strong>{props.user}</strong> e outras <strong><span data-test="likes-number">{likesCount + 1}</span> pessoas</strong></span>
                 </div>
             </div>
         </div>
