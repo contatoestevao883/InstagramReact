@@ -14,13 +14,7 @@ export default function Sugestoes(){
     )
 }
 
-
-
-
-
-
 function Sugestao(props) {
-        {console.log(props)}
     return(
         <div>
             <div class="users">

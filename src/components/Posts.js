@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { createElement, useState } from 'react';
 import {FiSend} from 'react-icons/fi'
 import {AiOutlineHeart} from 'react-icons/ai'
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
 import {TbMessageCircle2} from 'react-icons/tb'
-import {BiBookmark} from 'react-icons/bi'
+import {BsBookmark} from 'react-icons/bs'
+import {AiFillHeart} from 'react-icons/ai'
+import {BsFillBookmarkFill} from 'react-icons/bs'
 
 export default function Posts(){
 
@@ -23,31 +25,67 @@ export default function Posts(){
 
 
 function Post(props){
-    {console.log(props)}
+
+    const [likesCount, setLikesCount] = useState(props.likes)
+    const [addHeart, setAddHeart] = useState(false)
+    const [savePost, setSavePost] = useState(false)
+    
+    const sumLikes = () => {
+        setLikesCount(likesCount + 1)
+        console.log(likesCount)
+    }
+
+    const decLikes = () => {
+        setLikesCount(likesCount - 1)
+        console.log(likesCount)
+    }
+
+    const doubleClick = () =>{
+        if(addHeart === false){
+            setAddHeart(!addHeart)
+            sumLikes()
+        }
+    }
+
+    const oneClick = () => { 
+        if(addHeart === false){
+            setAddHeart(!addHeart)
+            sumLikes()
+        }else{
+            setAddHeart(!addHeart)
+            decLikes()
+        }
+    }
+
+    const oneClickBookmark = () => { 
+            setSavePost(!savePost)
+
+    }
+
     return (    
         <div>
             <div data-test="post" class="main">
-                <div class="box" key={props.index}>
+                <div class="box"  key={props.index}>
                     <div class="container">
                         <img data-test="post-image" src={props.image}/>
                         <p class="title">{props.title}</p>
                     </div>
                     <BiDotsHorizontalRounded class="dots"/>
                 </div>
-                <img src={props.post}/>
+                <img onDoubleClick={doubleClick} src={props.post}/>
                 <div class="div-logo">
-                    <div class="logos-img">
-                        <AiOutlineHeart class="logos-imgs"/>
-                        <TbMessageCircle2 class="logos-imgs" />
-                        <FiSend class="logos-imgs"/>
+                    <div class="logos-img-div">
+                       {(addHeart === false) ? <AiOutlineHeart data-test="like-post" onClick={oneClick} class="logos-imgs heart"/> : <AiFillHeart data-test="like-post" onClick={oneClick} class="logos-imgs heartfill"/>}
+                        <TbMessageCircle2 class="logos-imgs circle" />
+                        <FiSend class="logos-imgs send"/>
                     </div>
-                    <div>
-                        <BiBookmark class="bookmark"/>
+                    <div className='bookmark-div'>
+                        {(savePost === false) ? <BsBookmark onClick={oneClickBookmark} data-test="save-post" class="bookmark"/> : <BsFillBookmarkFill onClick={oneClickBookmark} data-test="save-post" onclass="bookmarkfill"/>}
                     </div>
                 </div>
                 <div class="comentary">
                     <img src={props.comentary} />
-                    <span>Curtido por <strong>{props.user}</strong> e outras <strong data-test="likes-number">{props.likes} pessoas</strong></span>
+                    <span>Curtido por <strong>{props.user}</strong> e outras <strong data-test="likes-number">{likesCount} pessoas</strong></span>
                 </div>
             </div>
         </div>

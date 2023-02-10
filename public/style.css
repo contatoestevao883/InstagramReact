@@ -182,7 +182,9 @@ input::placeholder{
 }
 
 .bookmark{
-    margin: 5px 8px 5px 5px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
 }
 
 .content{
@@ -203,6 +205,8 @@ input::placeholder{
 .side-bar img{
     width: 56px;
     height: 56px;
+    cursor: pointer;
+    border-radius: 50px;
 }
 .span-content{
     margin-left: 14px;
@@ -216,6 +220,7 @@ input::placeholder{
     margin-top: 50px;
     margin-bottom: 20px;
     margin-right: 110px;
+    width: 180px;
 }
 .sugestions{
     width: 200px;
@@ -237,7 +242,7 @@ input::placeholder{
 }
 .ver-tudo{
     position: absolute;
-    right: 230px;
+    right: 450px;
     top: 205px;
 }
 .users{
@@ -274,7 +279,7 @@ input::placeholder{
 }
 
 h3{
-    right: 235px;
+    right: 455px;
     color: #139EF2;
     font-weight: 500;
     font-size: 10px;
@@ -285,4 +290,28 @@ h3{
 .span-h3{
     display: flex;
 
+}
+.pencil{
+    cursor: pointer;
+}
+
+.heart{
+    cursor: pointer;
+    background-color: white;
+}
+
+.heartfill{
+    cursor: pointer;
+    color:red;
+}
+
+.bookmarkfill{
+    cursor: pointer;
+    color: black;
+    width: 20px;
+    height: 20px;
+}
+
+.bookmark-div{
+    margin: 5px 8px 5px 5px;
 }
